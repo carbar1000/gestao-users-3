@@ -1,0 +1,76 @@
+:root {
+  --bg-color: #1a1a1a;
+  --surface-color: #2d2d2d;
+  --text-color: #f5f5f5;
+  --primary-color: #646cff;
+  --primary-hover: #535bf2;
+}
+
+body {
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #11101000 0%, #2d2d2d 100%);
+  color: var(--text-color);
+}
+
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--text-color);
+  background: linear-gradient(45deg, var(--primary-color), #ff64cb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 5s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Neon glow effect */
+.title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(100, 108, 255, 0.3), transparent 70%);
+  z-index: -1;
+  opacity: 0.;
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+}

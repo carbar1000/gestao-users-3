@@ -1,0 +1,77 @@
+.navigation {
+  width: 100%;
+  height: 60px; /* Adjusted height for a more modern look */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between items */
+  padding: 0 2rem; /* Increased padding */
+  background-color: #333; /* Dark background for navigation */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  position: sticky;
+  top: 0; /* Stick to the top */
+  z-index: 100;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem; /* Increased gap for better spacing */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  padding: 0.5rem 1rem;
+  border-radius: 8px; /* More rounded corners */
+  transition: background-color 0.3s, transform 0.2s; /* Added transform for hover */
+}
+
+.nav-item:hover {
+  background-color: #444; /* Darker hover background */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff; /* White text color for better contrast */
+  font-family: 'Inter', sans-serif;
+  font-size: 16px; /* Adjusted font size */
+  font-weight: 600; /* Bolder font weight */
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444; /* Dark background for dropdown */
+  padding: 0.5rem 0;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 8px; /* More rounded corners */
+  z-index: 200; /* Ensure dropdown is above other elements */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block; /* Show dropdown on hover */
+  opacity: 1; /* Ensure it's visible */
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-item .nav-link {
+  display: block;
+  width: 100%;
+  color: #fff; /* Consistent text color */
+}
+
+.dropdown-item:hover {
+  background-color: #555; /* Darker hover background for dropdown items */
+}
