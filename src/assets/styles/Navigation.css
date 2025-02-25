@@ -5,7 +5,8 @@
   align-items: center;
   justify-content: space-between; /* Space between items */
   padding: 0 2rem; /* Increased padding */
-  background-color: #333; /* Dark background for navigation */
+  background-color: transparent; /* Tornar o fundo do menu transparente */
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
   position: sticky;
   top: 0; /* Stick to the top */

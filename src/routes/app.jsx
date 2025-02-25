@@ -7,12 +7,13 @@ import UsersListPage from '../pages/UsersListPage';
 import UsersStatusPage from '../pages/UsersStatusPage';
 import NotFound from '../pages/NotFound';
 import Layout from '../components/Layout';
-import Navigation from '../components/Navigation';
+// import Navigation from '../components/Navigation'; // Removido
 
 const App = () => {
   return (
     <Layout>
-      <Navigation />
+      {/* <Navigation /> */}
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />

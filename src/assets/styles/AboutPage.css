@@ -1,16 +1,16 @@
 /* Estilos para a página AboutPage */
 .about-page {
     padding: 20px;
-    text-align: center;
-  }
-  
-  .about-page h1 {
-    font-size: 2em;
-    color: #333;
-  }
-  
-  .about-page p {
-    font-size: 1.2em;
-    color: #666;
-  }
-  
+    text-align: left; /* Alinhamento à esquerda */
+}
+
+.about-page h1 {
+    font-size: 2.5em; /* Aumentar o tamanho da fonte do título */
+    color: white; /* Cor do título em branco */
+}
+
+.about-page p {
+    font-size: 1.5em; /* Aumentar o tamanho da fonte dos parágrafos */
+    color: white; /* Cor dos parágrafos em branco */
+    line-height: 1.6; /* Aumentar o espaçamento entre linhas para melhor legibilidade */
+}
