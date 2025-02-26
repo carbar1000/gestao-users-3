@@ -3,7 +3,13 @@ import { supabase } from '../supabaseClient';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../assets/styles/EditUser.css';
 
+import { useState } from 'react';
+
 const EditUserPage = () => {
+  const [flashMessage, setFlashMessage] = useState('');
+  const [flashCategory, setFlashCategory] = useState('');
+
+
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -58,7 +64,8 @@ const EditUserPage = () => {
 
   return (
     <div className="edit-user-container">
-      {flashMessage && <div className={`flash-message ${flashCategory}`}>{flashMessage}</div>}
+      {flashMessage && <div className={`flash-message ${flashCategory}`}>{flashMessage}</div>} 
+
       <form onSubmit={handleSubmit} className="edit-user-form">
 
         <h2>Editar Usuário</h2>
