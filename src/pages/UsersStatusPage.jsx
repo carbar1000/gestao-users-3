@@ -112,7 +112,8 @@ function UsersStatus() {
 
   return (
     <div className="view-users-container menu">
-      <h2>Lista de Usuários</h2>
+<h2>Status dos Usuários</h2>
+
       <table className="user-table">
         <thead>
           <tr>

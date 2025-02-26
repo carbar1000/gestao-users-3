@@ -56,7 +56,8 @@ export default function AddUserPage() {
   return (
     <div className="add-user-container">
       <form onSubmit={handleSubmit} className="add-user-form">
-        <h2>Adicionar Usuário</h2>
+<h2>Adicionar Usuário</h2>
+
         
         <label htmlFor="name">Nome:</label>
         <input
@@ -126,7 +127,8 @@ export default function AddUserPage() {
           className="form-group input"
         />
 
-        <button type="submit" disabled={isSubmitting}>Adicionar Usuário</button>
+<button type="submit" disabled={isSubmitting}>Adicionar Usuário</button>
+
       </form>
 
       {flashMessage && <p className={`flash-message ${flashCategory}`}>{flashMessage}</p>}
