@@ -3,13 +3,9 @@ import { supabase } from '../supabaseClient';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../assets/styles/EditUser.css';
 
-import { useState } from 'react';
-
 const EditUserPage = () => {
   const [flashMessage, setFlashMessage] = useState('');
   const [flashCategory, setFlashCategory] = useState('');
-
-
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -23,16 +19,22 @@ const EditUserPage = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const { data, error } = await supabase
-        .from('users')
-        .select()
-        .eq('id', id)
-        .single();
+      try {
+        const { data, error } = await supabase
+          .from('users')
+          .select()
+          .eq('id', id)
+          .single();
 
-      if (error) {
-        console.error('Error fetching user:', error);
-      } else {
-        setFormData(data);
+        if (error) {
+          setFlashMessage('Erro ao carregar usuário');
+          setFlashCategory('error');
+        } else {
+          setFormData(data);
+        }
+      } catch (error) {
+        setFlashMessage('Erro ao carregar usuário');
+        setFlashCategory('error');
       }
     };
 
@@ -53,12 +55,18 @@ const EditUserPage = () => {
         .eq('id', id);
 
       if (error) {
-        console.error('Error updating user:', error);
+        setFlashMessage('Erro ao atualizar usuário');
+        setFlashCategory('error');
       } else {
-        navigate('/users');
+        setFlashMessage('Usuário atualizado com sucesso');
+        setFlashCategory('success');
+        setTimeout(() => {
+          navigate('/users');
+        }, 2000);
       }
     } catch (error) {
-      console.error('Error:', error);
+      setFlashMessage('Erro ao atualizar usuário');
+      setFlashCategory('error');
     }
   };
 
@@ -134,7 +142,6 @@ const EditUserPage = () => {
         />
 
         <button type="submit" className="btn btn-primary">Salvar Alterações</button>
-
 
       </form>
     </div>
