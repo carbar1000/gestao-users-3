@@ -1,78 +1,52 @@
 .navigation {
-  width: 100%;
-  height: 60px; /* Adjusted height for a more modern look */
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Space between items */
-  padding: 0 2rem; /* Increased padding */
-  background-color: transparent; /* Tornar o fundo do menu transparente */
+  position: fixed; /* Fixa o menu no topo */
+  top: 45px; /* Alinha ao topo da página com margem de 45px */
+  width: 100%; /* Largura total */
+  z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+  background-color: #0f010100; /* Cor de fundo do menu escuro */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para um efeito moderno */
+  display: flex; /* Exibe os itens em linha */
+  justify-content: flex-start; /* Alinha os itens à esquerda */
 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-  position: sticky;
-  top: 0; /* Stick to the top */
-  z-index: 100;
+  font-family: 'Circular', custom-font, "Helvetica Neue", Helvetica, Arial, sans-serif; /* Alterar a fonte para Circular e outras fontes */
+  font-weight: 200; /* Peso da fonte */
+  color: rgb(73, 52, 165); /* Cor da fonte */
+  font-size: 16px; /* Tamanho da fonte */
+  line-height: 28px; /* Altura da linha */
+
+  font-weight: 100; /* Peso da fonte */
+  color: rgb(82, 82, 82); /* Cor da fonte */
+  font-size: 16px; /* Tamanho da fonte */
+  line-height: 28px; /* Altura da linha */
 }
 
 .nav-list {
-  list-style: none;
-  display: flex;
-  gap: 1rem; /* Increased gap for better spacing */
-  margin: 0;
-  padding: 0;
+  display: flex; /* Exibe os itens em linha */
+  justify-content: center; /* Alinha os itenscentro*/
+  padding: 0; /* Remove espaçamento vertical */
+  margin: 0; /* Remove margens */
+  list-style: none; /* Remove marcadores da lista */
 }
 
 .nav-item {
-  padding: 0.5rem 1rem;
-  border-radius: 8px; /* More rounded corners */
-  transition: background-color 0.3s, transform 0.2s; /* Added transform for hover */
-}
-
-.nav-item:hover {
-  background-color: #444; /* Darker hover background */
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  margin: 0 20px; /* Espaço de 20px entre os itens do menu */
 }
 
 .nav-link {
-  text-decoration: none;
-  color: #fff; /* White text color for better contrast */
-  font-family: 'Inter', sans-serif;
-  font-size: 16px; /* Adjusted font size */
-  font-weight: 600; /* Bolder font weight */
+  text-decoration: none; /* Remove sublinhado dos links */
+  color: #fff; /* Cor do texto em branco */
+  font-weight: bold; /* Texto em negrito */
+  transition: color 0.3s; /* Transição suave para a cor */
 }
 
-.dropdown {
-  position: relative;
-}
+.nav-link:hover {
+  color: #57a2f1; /* Cor azul ao passar o mouse para contraste com o fundo escuro */
 
-.dropdown-menu {
-  display: none; /* Initially hidden */
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #444; /* Dark background for dropdown */
-  padding: 0.5rem 0;
-  min-width: 200px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-  border-radius: 8px; /* More rounded corners */
-  z-index: 200; /* Ensure dropdown is above other elements */
-  transition: opacity 0.3s ease; /* Smooth transition */
-}
+  transform: scale(2.2); /* Aumenta o tamanho do link ao passar o mouse */
 
-.dropdown:hover .dropdown-menu {
-  display: block; /* Show dropdown on hover */
-  opacity: 1; /* Ensure it's visible */
-}
-
-.dropdown-item {
-  padding: 0.5rem 1rem;
-}
-
-.dropdown-item .nav-link {
-  display: block;
-  width: 100%;
-  color: #fff; /* Consistent text color */
-}
-
-.dropdown-item:hover {
-  background-color: #555; /* Darker hover background for dropdown items */
+  font-family: 'Circular', custom-font, "Helvetica Neue", Helvetica, Arial, sans-serif; /* Alterar a fonte para Circular */
+  font-weight: 300; /* Peso da fonte */
+  color: rgba(59, 62, 235, 0.945); /* Cor da fonte */
+  font-size: 16px; /* Tamanho da fonte */
+  line-height: 28px; /* Altura da linha */
 }

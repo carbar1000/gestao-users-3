@@ -11,10 +11,18 @@ body {
   min-height: 100vh;
   background: linear-gradient(135deg, var(--bg-color) 0%, var(--surface-color) 100%);
   color: var(--text-color);
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Circular', custom-font, "Helvetica Neue", Helvetica, Arial, sans-serif; /* Alterar a fonte para Circular e outras fontes */
+  font-weight: 400; /* Peso da fonte */
+  color: rgb(82, 82, 82); /* Cor da fonte */
+  font-size: 16px; /* Tamanho da fonte */
+  line-height: 28px; /* Altura da linha */
+  margin-top: 60px; /* Espaçamento entre o menu e o conteúdo */
+
+
   position: relative;
   overflow-x: hidden;
 }
+
 
 body::before {
   content: '';
@@ -32,7 +40,10 @@ body::before {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
 }
+
 
 .header {
   text-align: center;

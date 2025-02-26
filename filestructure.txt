@@ -19,10 +19,10 @@
             |-- AboutPage.css
             |-- AddUser.css
             |-- add_user_flash.css
+            |-- DarkTheme.css
             |-- EditUser.css
             |-- Header.css
             |-- Home.css
-            |-- Navigation
             |-- Navigation.css
             |-- NotFound.css
             |-- popup_edit_user.css
@@ -42,7 +42,7 @@
         |-- AboutPage.jsx
         |-- AddUserPage.jsx
         |-- EditUserPage.jsx
-        |-- HomePage.jsx
+        |-- index.jsx
         |-- NotFound.jsx
         |-- UsersListPage.jsx
         |-- UsersStatusPage.jsx

@@ -7,8 +7,8 @@ import '../assets/styles/AboutPage.css';
 const AboutPage = () => {
   return (
     <div className="about-page">
-      <h1>Sobre Nós</h1>
-      <p>Bem-vindo ao Sistema de Gerenciamento de Usuários!</p>
+      <h2>Bem-vindo ao Sistema de Gerenciamento de Usuários!</h2>
+      
       <p>Este sistema foi desenvolvido para facilitar a gestão de usuários de forma eficiente e intuitiva. Aqui, você pode:</p>
       <ul>
         <li>Cadastrar novos usuários</li>

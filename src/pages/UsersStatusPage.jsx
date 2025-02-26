@@ -57,7 +57,7 @@ function UsersStatus() {
 
       if (error) throw error; // Lança o erro caso exista
       // Remove o usuário excluído da lista de usuários
-      setUsers(users.filter(user => user.id !== id));
+      setUsers(users.filter(u => u.id !== id));
       setShowPopup(false); // Fecha o popup de exclusão
     } catch (error) {
       console.error('Error deleting user:', error.message); // Exibe o erro no console
@@ -67,13 +67,8 @@ function UsersStatus() {
   // Função para atualizar o status de um usuário
   const handleStatusChange = async (id, newStatus) => {
     try {
-      const user = users.find(u => u.id === id);
-      console.log(`Iniciando atualização de status para usuário ${id}`);
-      console.log(`Status atual: ${user?.status}`);
-      console.log(`Novo status: ${newStatus}`);
       const now = new Date().toISOString();
       
-      console.log('Enviando atualização para o banco de dados...');
       const { data, error } = await supabase
         .from('users')
         .update({ 
@@ -83,32 +78,15 @@ function UsersStatus() {
         .eq('id', id)
         .select('*');
 
-      if (error) {
-        console.error('Erro ao atualizar status:', error);
-        throw error;
-      }
+      if (error) throw error; // Lança o erro caso exista
       
       if (data && data.length > 0) {
         const updatedUser = data[0];
-        console.log('Resposta do banco de dados:', updatedUser);
-        console.log('Data/hora da última alteração:', updatedUser.last_status_change);
-        
-        console.log('Atualizando estado local...');
         setUsers(prevUsers => {
-          const updatedUsers = prevUsers.map(user => 
-            user.id === id ? updatedUser : user
+          return prevUsers.map(u => 
+            u.id === id ? updatedUser : u
           );
-          console.log('Estado local atualizado:', updatedUsers);
-          console.log('Nova data/hora no estado local:', 
-            updatedUsers.find(u => u.id === id)?.last_status_change);
-          return updatedUsers;
         });
-        
-        console.log('Status e data/hora atualizados com sucesso!');
-        console.log(`Status final: ${updatedUser.status}`);
-        console.log(`Data/hora final: ${updatedUser.last_status_change}`);
-      } else {
-        console.error('Nenhum dado retornado do banco de dados');
       }
     } catch (error) {
       console.error('Error updating status:', error.message); // Exibe o erro no console
@@ -133,7 +111,7 @@ function UsersStatus() {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="view-users-container">
+    <div className="view-users-container menu">
       <h2>Lista de Usuários</h2>
       <table className="user-table">
         <thead>
@@ -153,34 +131,30 @@ function UsersStatus() {
           </tr>
         </thead>
         <tbody>
-          {users.map(user => (
-            <tr key={user.id}>
+          {users.map(u => (
+            <tr key={u.id}>
               {/* Exibe os dados de cada usuário */}
-              <td>{user.id}</td>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
+              <td>{u.id}</td>
+              <td>{u.name}</td>
+              <td>{u.email}</td>
               <td>
                 {/* Dropdown para alterar o status do usuário */}
                 <select
-                  value={user.status || 'N/A'}
-                  onChange={(e) => handleStatusChange(user.id, e.target.value)}
+                  value={u.status || 'N/A'}
+                  onChange={(e) => handleStatusChange(u.id, e.target.value)}
                 >
                   <option value="Ativo">Ativo</option>
                   <option value="Não Ativo">Não Ativo</option>
                 </select>
               </td>
-              <td>{user.brevo_api_key || 'N/A'}</td>
-              <td>{user.brevo_sender_name || 'N/A'}</td>
-              <td>{user.brevo_sender_email || 'N/A'}</td>
-              <td>{user.contact_list_brevo || 'N/A'}</td>
-              <td>
-                {/* Formata a data de criação */}
-                {new Date(user.created_at).toLocaleDateString('pt-BR')}
-              </td>
+              <td>{u.brevo_api_key || 'N/A'}</td>
+              <td>{u.brevo_sender_name || 'N/A'}</td>
+              <td>{u.brevo_sender_email || 'N/A'}</td>
+              <td>{u.contact_list_brevo || 'N/A'}</td>
+              <td>{new Date(u.created_at).toLocaleDateString('pt-BR')}</td>
               <td className="timestamp-cell">
-                {/* Formata a data/hora da última alteração */}
-                {user.last_status_change 
-                  ? new Date(user.last_status_change).toLocaleString('pt-BR', {
+                {u.last_status_change 
+                  ? new Date(u.last_status_change).toLocaleString('pt-BR', {
                       day: '2-digit',
                       month: '2-digit',
                       year: 'numeric',
@@ -191,16 +165,14 @@ function UsersStatus() {
                 }
               </td>
               <td>
-                {/* Link para editar o usuário */}
                 <Link 
-                  to={`/edit-user/${user.id}`}
+                  to={`/edit-user/${u.id}`}
                   className="edit-button"
                 >
                   Editar
                 </Link>
-                {/* Botão para abrir o popup de exclusão */}
                 <button
-                  onClick={() => openDeletePopup(user)}
+                  onClick={() => openDeletePopup(u)}
                   className="delete-button"
                 >
                   Excluir
@@ -211,21 +183,18 @@ function UsersStatus() {
         </tbody>
       </table>
 
-      {/* Exibe o popup de exclusão se showPopup for true */}
       {showPopup && selectedUser && (
         <div id="deletePopup" className="popup-overlay">
           <div className="popup-content">
             <h3>Confirmação de Eliminação</h3>
             <p>Você tem certeza que deseja eliminar o usuário <strong>{selectedUser.email}</strong>?</p>
             <div className="popup-actions">
-              {/* Botão para confirmar a exclusão */}
               <button
                 onClick={() => handleDelete(selectedUser.id)}
                 className="confirm-delete-button"
               >
                 Confirmar
               </button>
-              {/* Botão para cancelar a exclusão */}
               <button
                 onClick={closeDeletePopup}
                 className="cancel-delete-button"
@@ -241,4 +210,4 @@ function UsersStatus() {
 }
 
 // Exporta o componente para ser usado em outras partes do app
-export default UsersStatus; //
+export default UsersStatus;

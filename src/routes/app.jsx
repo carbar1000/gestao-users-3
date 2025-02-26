@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import HomePage from '../pages/HomePage';
+import HomePage from '../pages/index';
+
 import AboutPage from '../pages/AboutPage';
 import AddUserPage from '../pages/AddUserPage';
 import EditUserPage from '../pages/EditUserPage';
@@ -16,6 +17,7 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
+
         <Route path="/about" element={<AboutPage />} />
         <Route path="/add-user" element={<AddUserPage />} />
         <Route path="/edit-user/:id" element={<EditUserPage />} />
