@@ -58,7 +58,9 @@ const EditUserPage = () => {
 
   return (
     <div className="edit-user-container">
+      {flashMessage && <div className={`flash-message ${flashCategory}`}>{flashMessage}</div>}
       <form onSubmit={handleSubmit} className="edit-user-form">
+
         <h2>Editar Usuário</h2>
         <p className="user-id" style={{ color: '#007bff' }}>ID do Usuário: {id}</p>
         
@@ -125,6 +127,8 @@ const EditUserPage = () => {
         />
 
         <button type="submit" className="btn btn-primary">Salvar Alterações</button>
+
+
       </form>
     </div>
   );
