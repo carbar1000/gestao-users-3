@@ -7,4 +7,4 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY; // Defina a vari√
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Exporte a vari√°vel supabase
-export default supabase;
+export { supabase };
