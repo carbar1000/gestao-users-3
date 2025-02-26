@@ -4,10 +4,7 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL; // Defina a variável no Vercel
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY; // Defina a variável no Vercel
 
-// Exporte a variável supabase
-export { supabase };
-
-
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+// Exporte a variável supabase
 export default supabase;
