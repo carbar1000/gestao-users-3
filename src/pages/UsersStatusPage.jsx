@@ -166,12 +166,14 @@ function UsersStatus() {
                 }
               </td>
               <td>
-                <Link 
-                  to={`/edit-user/${u.id}`}
-                  className="edit-button"
-                >
-                  Editar
-                </Link>
+<Link 
+  to={`/edit-user/${u.id}`}
+  className="edit-button"
+  onClick={() => console.log(`Edit user with ID: ${u.id}`)} // Adicionando log para depuração
+>
+  Editar
+</Link>
+
                 <button
                   onClick={() => openDeletePopup(u)}
                   className="delete-button"
