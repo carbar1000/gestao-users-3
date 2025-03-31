@@ -1,0 +1,17 @@
+.app-header {
+  background-color: #333; /* Cor de fundo do cabeçalho */
+  padding: 1rem; /* Espaçamento interno */
+}
+
+.nav-links {
+  list-style-type: none; /* Remove marcadores da lista */
+  padding: 0; /* Remove padding padrão */
+  display: flex; /* Layout flexível */
+  gap: 20px; /* Espaçamento entre itens */
+}
+
+.nav-links a {
+  text-decoration: none; /* Remove sublinhado */
+  color: #fff; /* Cor do texto */
+  font-weight: bold; /* Fonte em negrito */
+}

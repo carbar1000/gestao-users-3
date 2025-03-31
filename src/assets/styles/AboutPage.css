@@ -1,0 +1,27 @@
+/* Estilos para a página AboutPage */
+.about-page {
+    padding: 20px;
+    text-align: left; /* Alinhamento à esquerda */
+    width: 100%; /* Aumentar a largura do contêiner */
+    max-width: 1200px; /* Largura máxima do contêiner */
+    margin: 0 auto; /* Centralizar o contêiner */
+    font-family: 'Circular', custom-font, "Helvetica Neue", Helvetica, Arial, sans-serif; /* Alterar a fonte para Circular e outras fontes */
+    font-weight: 400; /* Peso da fonte */
+    color: rgb(247, 239, 239); /* Cor da fonte */
+    font-size: 15px; /* Tamanho da fonte */
+    line-height: 28px; /* Altura da linha */
+}
+
+
+
+
+.about-page h1 {
+    font-size: 2.5em; /* Aumentar o tamanho da fonte do título */
+    color: white; /* Cor do título em branco */
+}
+
+.about-page p {
+    font-size: 1em; /* Aumentar o tamanho da fonte dos parágrafos */
+    color: white; /* Cor dos parágrafos em branco */
+    line-height: 1.6; /* Aumentar o espaçamento entre linhas para melhor legibilidade */
+}

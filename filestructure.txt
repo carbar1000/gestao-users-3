@@ -1,0 +1,54 @@
+|-- .env
+|-- .gitignore
+|-- .nvmrc
+|-- config.js
+|-- eslint.config.js
+|-- index.html
+|-- jsconfig.json
+|-- package-lock.json
+|-- package.json
+|-- public
+    |-- email-icon.jpg
+    |-- index.html
+    |-- vite.svg
+|-- README.md
+|-- server.js
+|-- src
+    |-- assets
+        |-- styles
+            |-- AboutPage.css
+            |-- AddUser.css
+            |-- add_user_flash.css
+            |-- DarkTheme.css
+            |-- EditUser.css
+            |-- Header.css
+            |-- Home.css
+            |-- Navigation.css
+            |-- NotFound.css
+            |-- popup_edit_user.css
+            |-- UsersList.css
+            |-- UsersPage.css
+            |-- UsersStatus.css
+    |-- components
+        |-- Header.jsx
+        |-- Layout.jsx
+        |-- Loading.css
+        |-- Loading.jsx
+        |-- Navigation.jsx
+    |-- lib
+        |-- utils.ts
+    |-- main.jsx
+    |-- pages
+        |-- AboutPage.jsx
+        |-- AddUserPage.jsx
+        |-- EditUserPage.jsx
+        |-- index.jsx
+        |-- NotFound.jsx
+        |-- UsersListPage.jsx
+        |-- UsersStatusPage.jsx
+    |-- routes
+        |-- app.jsx
+    |-- services
+        |-- supabaseService.js
+    |-- supabaseClient.js
+|-- vite.config.js

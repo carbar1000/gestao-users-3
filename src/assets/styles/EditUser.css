@@ -1,0 +1,352 @@
+/* Estilos globais */
+
+body {
+
+    font-family: 'Roboto', sans-serif;
+
+    background-color: var(--bg-color);
+
+    color: var(--text-color);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 3%;
+
+}
+
+
+
+
+.edit-user-container {
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 30px;
+
+
+
+
+}
+
+
+
+
+.edit-user-form {
+
+    background-color: var(--input-bg);
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 20px rgba(221, 216, 216, 0.6);
+
+    width: 80%;
+
+    max-width: 800px;
+
+    min-width: 600px;
+
+    margin: 50px;
+
+    box-sizing: border-box;
+
+    font-family: 'Inter', sans-serif;
+
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    .add-user-form {
+
+        padding: 30px;
+
+        margin: 15px;
+
+    }
+
+}
+
+
+
+
+@media (max-width: 480px) {
+
+    .add-user-form {
+
+        padding: 20px;
+
+        margin: 10px;
+
+    }
+
+}
+
+
+
+
+.form-group {
+
+    margin-bottom: 25px; /* Espaçamento entre os campos */
+
+}
+
+
+
+
+label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 80%;
+
+    color: var(--text-color);
+
+}
+
+
+
+
+input[type="text"],
+
+input[type="email"],
+
+input[type="password"],
+
+textarea,
+
+select {
+
+    width: 100%;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    border: 1px solid #242222; /* Cor da borda mais clara */
+
+
+
+
+    background-color: var(--input-bg);
+
+    color: var(--text-color);
+
+    font-size: 16px;
+
+    box-sizing: border-box;
+
+    transition: border-color 0.3s ease;
+
+    outline: none;
+
+    margin-bottom: 5px;
+
+    height: 38px;
+
+}
+
+
+
+
+/* Afastar o botão do último campo input */
+
+.add-user-form button {
+
+    margin-top: 10px;
+
+}
+
+
+
+
+input[type="text"]:focus,
+
+input[type="email"]:focus,
+
+input[type="password"]:focus,
+
+textarea:focus,
+
+select:focus {
+
+    border-color: #00bfff; /* Cor da borda no focus */
+
+    box-shadow: 0 0 8px rgba(0, 191, 255, 0.3); /* Sombra sutil no focus */
+
+}
+
+
+
+
+textarea {
+
+    resize: vertical;
+
+    min-height: 100px;
+
+}
+
+
+
+
+select {
+
+    appearance: none; /* Remove setas padrões do select */
+
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23fff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+
+    background-repeat: no-repeat;
+
+    background-position: right 12px center;
+
+    background-size: 16px;
+
+    padding-right: 40px; /* Espaço para a seta */
+
+}
+
+
+
+
+.btn-primary {
+
+    display: block;
+
+    width: calc(100% - 2px);
+
+    padding: 10px;
+
+    background-color: var(--primary-color);
+
+    color: #fff;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    margin: 10px 0 0 0;
+
+    box-sizing: border-box;
+
+}
+
+
+
+
+.btn-primary:hover {
+
+    background-color: #059055;
+
+    transform: scale(1.02);
+
+}
+
+
+
+
+.add-user-form button:active {
+
+    transform: scale(1.01); /* Pequeno zoom ao clicar */
+
+}
+
+
+
+
+/* Estilos para mensagens de erro e sucesso */
+
+.error-message, .success-message {
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    margin-top: 10px;
+
+    text-align: center;
+
+    font-size: 0.9em;
+
+    display: none; /* Oculta por padrão */
+
+}
+
+
+
+
+.error-message {
+
+    background-color: #f8d7da;
+
+    color: #721c24;
+
+    border: 1px solid #f5c6cb;
+
+}
+
+
+
+
+.success-message {
+
+    background-color: #d4edda;
+
+    color: #155724;
+
+    border: 1px solid #c3e6cb;
+
+}
+
+.resize-handle {
+
+    resize: both;
+
+    overflow: auto;
+
+}
+
+/* Estilos para mensagens flash */
+
+.flash-message {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+

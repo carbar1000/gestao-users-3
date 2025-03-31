@@ -1,0 +1,52 @@
+.navigation {
+  position: fixed; /* Fixa o menu no topo */
+  top: 45px; /* Alinha ao topo da página com margem de 45px */
+  width: 100%; /* Largura total */
+  z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+  background-color: #0f010100; /* Cor de fundo do menu escuro */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para um efeito moderno */
+  display: flex; /* Exibe os itens em linha */
+  justify-content: flex-start; /* Alinha os itens à esquerda */
+
+  font-family: 'Circular', custom-font, "Helvetica Neue", Helvetica, Arial, sans-serif; /* Alterar a fonte para Circular e outras fontes */
+  font-weight: 200; /* Peso da fonte */
+  color: rgb(73, 52, 165); /* Cor da fonte */
+  font-size: 16px; /* Tamanho da fonte */
+  line-height: 28px; /* Altura da linha */
+
+  font-weight: 100; /* Peso da fonte */
+  color: rgb(82, 82, 82); /* Cor da fonte */
+  font-size: 16px; /* Tamanho da fonte */
+  line-height: 28px; /* Altura da linha */
+}
+
+.nav-list {
+  display: flex; /* Exibe os itens em linha */
+  justify-content: center; /* Alinha os itenscentro*/
+  padding: 0; /* Remove espaçamento vertical */
+  margin: 0; /* Remove margens */
+  list-style: none; /* Remove marcadores da lista */
+}
+
+.nav-item {
+  margin: 0 20px; /* Espaço de 20px entre os itens do menu */
+}
+
+.nav-link {
+  text-decoration: none; /* Remove sublinhado dos links */
+  color: #fff; /* Cor do texto em branco */
+  font-weight: bold; /* Texto em negrito */
+  transition: color 0.3s; /* Transição suave para a cor */
+}
+
+.nav-link:hover {
+  color: #57a2f1; /* Cor azul ao passar o mouse para contraste com o fundo escuro */
+
+  transform: scale(2.2); /* Aumenta o tamanho do link ao passar o mouse */
+
+  font-family: 'Circular', custom-font, "Helvetica Neue", Helvetica, Arial, sans-serif; /* Alterar a fonte para Circular */
+  font-weight: 300; /* Peso da fonte */
+  color: rgba(59, 62, 235, 0.945); /* Cor da fonte */
+  font-size: 16px; /* Tamanho da fonte */
+  line-height: 28px; /* Altura da linha */
+}
